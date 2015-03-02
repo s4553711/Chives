@@ -6,10 +6,17 @@ perl:
   - "5.14"
   - "5.12"
   - "5.10"
+before_install:
+  - "sudo apt-get install libgmp3-dev"
+  - "cpanm Mojo::UserAgent"
+  - "cpanm Test::More"
+  - "cpanm Devel::Cover::Report::Coveralls"
 env:
   - "HARNESS_OPTIONS=j9 TEST_POD=1 TEST_EV=1 TEST_IPV6=1 TEST_SOCKS=1 TEST_TLS=1"
 install:
-  - "cpanm -n Test::Pod Test::Pod::Coverage EV IO::Socket::IP IO::Socket::Socks IO::Socket::SSL Net::SSH::Perl Config::Tiny"
+  - "cpanm -n Test::Pod Test::Pod::Coverage EV IO::Socket::IP IO::Socket::Socks IO::Socket::SSL Net::SSH::Perl Config::Tiny Test::More"
   - "cpanm -n --installdeps ."
+script:
+  cover -test -report coveralls
 notifications:
   email: false
