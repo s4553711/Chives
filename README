@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/s4553711/Chives/badge.svg)](https://coveralls.io/r/s4553711/Chives)
+<a href='https://coveralls.io/r/s4553711/Chives'><img src='https://coveralls.io/repos/s4553711/Chives/badge.svg' alt='Coverage Status' /></a>
 Dependency
 - Net::SSH::Perl
 - Config::Tiny
